@@ -26,7 +26,7 @@ app.get("/api/hello", function (req, res) {
 app.get("/api/:time", (req, res) => {
   let { time } = req.params;
 
-  if (time === "") {
+  if (time === undefined) {
     return res.send({
       "unix": new Date().getTime(),
       "utc": new Date().toUTCString()
